@@ -1,0 +1,11 @@
+h1{
+    font-size: 80px;
+    font-weight: bolder;
+    text-align: center;
+    color: blue;
+    background-color: antiquewhite;
+}
+p{
+    font-size: medium;
+    background-color: antiquewhite;
+}
