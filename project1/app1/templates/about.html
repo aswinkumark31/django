@@ -8,5 +8,10 @@
 <body>
     
     <h1>About page</h1>
+
+    {% for i in data %}
+
+    <p>{{i.name}}</p> <span>{{i.price}}</span>
+    {% endfor %}
 </body>
 </html>
