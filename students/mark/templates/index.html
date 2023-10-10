@@ -1,0 +1,17 @@
+<form action="{% url 'index' %}" method="POST">
+    {% csrf_token %}
+ 
+    {{mark_up}}
+    <button name="submit">submit</button>
+
+    {% for i in mark %}
+
+    <li>
+    {{i.name}}
+   
+    {{i.mark}}
+</li>
+
+
+    {%endfor%}
+  </form>

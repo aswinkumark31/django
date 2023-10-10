@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <form method="POST" action="{% url 'index' %}">
+
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">name</th>
+                    <th scope="col">adress</th>
+                    <th scope="col">age</th>
+                    <th scope="col">phone</th>
+                    <th scope="col">active</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                    {%for i in enq%}
+                  <tr>
+                    <th scope="row">{{i.id}}</th>
+                    <td>{{i.name}}</td>
+                    <td>{{i.adress}}</td>
+                    <td>{{i.age}}</td>
+                    <td>{{i.phone}}</td>
+                    <td><button name="delete" value={{i.id}}>delete</button>
+                        <button type="button" class="btn btn-warning">edit</button></td>
+                        <!-- <td><button name="delete" value={{i.id}}>delete</button></td> -->
+                  </tr>
+                  {%endfor%}
+   
+              </table>
+              {% csrf_token %}
+              {{form_obj}}
+              <button name="save">save</button>
+              <!-- <button type="button" class="btn btn-success" name="save">add to form</button> -->
+            </form>
+        </div>
+    </div>
+</body>
+</html>
