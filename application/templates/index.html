@@ -1,0 +1,22 @@
+<form method="POST" action="{% url 'index' %}">
+{% csrf_token %}
+{{form_obj}}
+
+<button name="save">save</button>
+
+{%for i in todo%}
+
+<li>
+{{i.name}}
+
+<button formnovalidate name="delete" value="{{i.id}}">delete</button>
+<button name="edit" value="{{i.id}}">edit</button>
+</li>
+
+
+{%endfor%}
+
+
+
+
+</form>
